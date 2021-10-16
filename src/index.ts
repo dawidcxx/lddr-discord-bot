@@ -1,12 +1,14 @@
+require('dotenv').config()
+import { getConfiguration } from './config'
 import { registerCronJob } from './cron/registerCronJob'
 
-const cleanUpCron = registerCronJob()
-
-console.log('Cron job registered')
-
-function cleanUp() {
-  cleanUpCron()
-  console.log('stopping application')
+async function main(): Promise<void> {
+  const config = getConfiguration()
+  await registerCronJob(config)
+  console.log('Cron job registered')
 }
 
-process.on('SIGINT', cleanUp)
+main().catch((error) => {
+  console.error('Uncaugh exception', error)
+  process.exit(727)
+})
