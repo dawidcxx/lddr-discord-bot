@@ -25,7 +25,7 @@ export class WarmaneCrawler implements ICrawler {
   }
 
   async setup(): Promise<void> {
-    this.browser = await pup.launch({ headless: false })
+    this.browser = await pup.launch({ headless: true })
   }
 
   async close(): Promise<void> {
