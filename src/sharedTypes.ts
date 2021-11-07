@@ -15,3 +15,10 @@ export enum ClassType {
   Warlock = 'Warlock',
   Warrior = 'Warrior',
 }
+
+export type ClassTypes = keyof typeof ClassType
+
+export interface IClosable {
+  setup?(): Promise<void>
+  close?(): Promise<void>
+}

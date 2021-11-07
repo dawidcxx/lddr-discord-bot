@@ -7,6 +7,7 @@
   "scripts": {
     "build": "tsc",
     "watch": "nodemon --exec \"./node_modules/.bin/ts-node\" ./src/index.ts",
+    "warmane-log-crawler": "nodemon --exec \"./node_modules/.bin/ts-node\" ./src/examples/warmane-log-crawler.ts",
     "test": "jest",
     "format": "npx prettier --write ./src"
   },
@@ -32,6 +33,7 @@
     "dotenv": "^10.0.0",
     "faker": "^5.5.3",
     "node-cron": "^3.0.0",
-    "node-fetch": "^3.0.0"
+    "node-fetch": "^3.0.0",
+    "puppeteer": "^11.0.0"
   }
 }

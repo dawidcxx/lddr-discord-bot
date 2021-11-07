@@ -1,6 +1,6 @@
-import { ClassType, LadderType } from '../sharedTypes'
+import { ClassType, ClassTypes, IClosable, LadderType } from '../sharedTypes'
 
-export interface ICrawler {
+export interface ICrawler extends IClosable {
   getAllTeams(ladder: LadderType): Promise<Array<TeamOverview>>
 }
 
@@ -8,7 +8,7 @@ export interface TeamOverview {
   rank: number
   name: string
   members: {
-    class: ClassType
+    class: ClassTypes
     name: string
   }[]
   realmName: string
