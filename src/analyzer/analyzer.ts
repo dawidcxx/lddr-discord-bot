@@ -9,6 +9,7 @@ export interface IAnalysisReport {
 export type IAnalysisEvent = 'rating-change' | 'gain' | 'lose' | 'appeared' | 'removed' | 'roaster-change'
 
 export interface IAnalysisRatingChange {
+  when: Date
   event: 'rating-change'
   ratingDiff: number
   teamNow: TeamOverview
@@ -55,6 +56,7 @@ export class Analyzer {
               ratingDiff: team.rating - teamBefore.rating,
               teamNow: team,
               teamBefore,
+              when: new Date(),
             })
           }
 

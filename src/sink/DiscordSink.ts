@@ -93,6 +93,7 @@ function formattRatingChange(analysis: IAnalysisRatingChange) {
   const diff = analysis.ratingDiff
   return `
 Team: "**${analysis.teamNow.name}**" (${analysis.teamNow.members.map((it) => it.name).join(', ')})
+When: **${analysis.when.toLocaleTimeString()}**
 Event: **Rating Change**
 Data: { Rank = *${rank}*  Before = *${before}* After = *${now}* Diff = **${diff}** }
   `.trim()
